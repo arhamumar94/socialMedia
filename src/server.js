@@ -1,4 +1,5 @@
 const express= require('express')
+require('dotenv').config()
 const {db}=require('./db/models')
 const {usersRoute}=require('./routes/users')
 const {postsRoute}=require('./routes/posts')
