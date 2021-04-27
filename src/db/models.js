@@ -1,10 +1,8 @@
 const Sequelize=require('sequelize');
 let db;
-if(process.env.DATABASE_URL)
-{
-    db=new Sequelize(process.env.DATABASE_URL)
+ db=new Sequelize("postgres://pvoguahgvyuusp:4aaf748417840bc235e992f1212a06e60aea9b6a39af6e13d7707382534d0725@ec2-34-233-0-64.compute-1.amazonaws.com:5432/d6mpe0caeoi8ej")
     
-}
+
 const COL_ID_DEF={
     type:Sequelize.DataTypes.INTEGER,
     autoIncrement:true,
