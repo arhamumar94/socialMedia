@@ -10,8 +10,10 @@ app.use('/api/users',usersRoute)
 app.use('/api/posts',postsRoute)
 app.use('/',express.static(__dirname+'/public'))
 const PORT=process.env.PORT||8383;
+console.log(process.env.PORT)
 
-db.sync({alter:true}).then(()=>{
+db.sync().then(()=>{
+    console.log(process.env.PORT)
     app.listen(PORT,()=>{
         console.log(`server listeing at port http://localhost:8383`)
     })
