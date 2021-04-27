@@ -1,14 +1,11 @@
 const Sequelize=require('sequelize');
-const db=new Sequelize({
-    dialect:"mysql",
-    database:"cbsocialmediadb",
-    username:"cbsocialuser",
-    password:"cbsocialpass",
-    host:"localhost",
-    native: true,
-  ssl: true
-
-})
+let db;
+var sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: true
+    }
+  });
 
 const COL_ID_DEF={
     type:Sequelize.DataTypes.INTEGER,
