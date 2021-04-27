@@ -1,6 +1,6 @@
 const Sequelize=require('sequelize');
-let db;
-var sequelize = new Sequelize(process.env.DATABASE_URL, {
+
+let db = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     dialectOptions: {
       ssl: true
