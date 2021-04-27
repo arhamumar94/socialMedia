@@ -11,12 +11,12 @@ app.use('/api/posts',postsRoute)
 app.use('/',express.static(__dirname+'/public'))
 const PORT=process.env.PORT||8383;
 console.log(process.env.PORT)
-
+app.listen(PORT,()=>{
+    console.log(`server listeing at port http://localhost:8383`)
+})
 db.sync().then(()=>{
     console.log(process.env.PORT)
-    app.listen(PORT,()=>{
-        console.log(`server listeing at port http://localhost:8383`)
-    })
+   
 }).catch((err)=>{
     console.error(new Error(`could not start server`))
     console.error(err);
