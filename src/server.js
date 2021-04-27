@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}))
 app.use('/api/users',usersRoute)
 app.use('/api/posts',postsRoute)
 app.use('/',express.static(__dirname+'/public'))
-const PORT=process.env.PORT;
+const PORT=process.env.PORT||8383;
 
 db.sync({alter:true}).then(()=>{
     app.listen(PORT,()=>{

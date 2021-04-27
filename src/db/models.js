@@ -1,12 +1,10 @@
 const Sequelize=require('sequelize');
-const db=new Sequelize({
-    dialect:"postgres",
-    database:"d6mpe0caeoi8ej",
-    username:"pvoguahgvyuusp",
-    password:"4aaf748417840bc235e992f1212a06e60aea9b6a39af6e13d7707382534d0725",
-    host:"ec2-34-233-0-64.compute-1.amazonaws.com",
-
-})
+let db;
+if(process.env.DATABASE_URL)
+{
+    db=new Sequelize(process.env.DATABASE_URL)
+    
+}
 const COL_ID_DEF={
     type:Sequelize.DataTypes.INTEGER,
     autoIncrement:true,
