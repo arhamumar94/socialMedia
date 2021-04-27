@@ -3,8 +3,11 @@ const Sequelize=require('sequelize');
 let db = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     dialectOptions: {
-      ssl: true
-    }
+        ssl: {
+            require: true,
+            rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+          }
+    },
   });
 
 const COL_ID_DEF={
