@@ -1,11 +1,12 @@
 const Sequelize=require('sequelize');
 
+
 let db = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     dialectOptions: {
         ssl: {
             require: true,
-            rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+            rejectUnauthorized: false
           }
     },
   });

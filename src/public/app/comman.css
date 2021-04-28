@@ -4,10 +4,12 @@
     top: 0px;
 }
 #footer{
+    height: 122px;
+    margin-top: 55px;
     position: sticky;
     bottom: 0px;
     padding: 10px;
-    height: 110px;
+    
     background-color: var(--light);
 }
 #content{
